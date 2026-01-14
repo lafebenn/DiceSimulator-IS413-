@@ -15,7 +15,7 @@ internal class Program
         Random rnd = new Random();
         
         // Out of 13 so the index is the same as the combo roled ([2] is for the combo 2)
-        int[] rollResults = new int[13];
+        int[] rollResults = new int[11];
         
         // Rolling logic
         Console.WriteLine("\nRolling...");
@@ -24,7 +24,7 @@ internal class Program
             int die1 = rnd.Next(1, 7);
             int die2 = rnd.Next(1, 7);
             int total = (die1 + die2);
-            rollResults[total]++;
+            rollResults[total - 2]++;
         }
 
         //Output
@@ -34,7 +34,7 @@ internal class Program
     //Loop through for each combo
     for (int i = 2; i <= 12; i++)
     {
-        int count = rollResults[i];
+        int count = rollResults[i - 2];
         double percentage = (double)count / num_roll * 100;
 
         Console.Write(i + ": ");
